@@ -1,0 +1,13 @@
+<form (ngSubmit)="fetchAuthor()">
+  <label for="authorId">Enter Author ID:</label>
+  <input type="text" id="authorId" [(ngModel)]="authorId" name="authorId" required />
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="author">
+  <h3>Author Details</h3>
+  <p>Name: {{ author.name }}</p>
+  <p>Books: {{ author.books.join(', ') }}</p>
+</div>
+
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
